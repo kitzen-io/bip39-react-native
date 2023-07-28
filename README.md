@@ -17,6 +17,10 @@ It was forked from [react-native-bip39](https://github.com/valora-inc/react-nati
 1. Copy paste this block to your package.json:
 ```json
 {  
+  "dependencies": {
+    "react-native-crypto": "*",
+    "react-native-randombytes": "*"
+  },
   "resolutions": {
     "react-native-crypto/pbkdf2": "3.1.2",
     "react-native-crypto/public-encrypt/parse-asn1/pbkdf2": "3.1.2",
@@ -24,6 +28,10 @@ It was forked from [react-native-bip39](https://github.com/valora-inc/react-nati
   }
 }
 ```
+This is required! 
+ - Resolutions are not applied from nested modules. So manuall setup is required
+ - Duplicating dependencies is required so react could pull up list of packages it needs to check as native modules, otherwise you'll get [undefined RNRandomBytes.seed](https://stackoverflow.com/questions/67019573/typeerror-null-is-not-an-object-evaluating-rnrandombytes-seed-react-native/76767229#76767229)
+
 2. Install the library
 ```bash
 yarn add @kitzen/react-native-bip39
