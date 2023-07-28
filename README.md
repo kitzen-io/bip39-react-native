@@ -28,9 +28,12 @@ It was forked from [react-native-bip39](https://github.com/valora-inc/react-nati
 ```bash
 yarn add @kitzen/react-native-bip39
 yarn add buffer ^6.0.3
-// You must run this manually before first Metro setup
+# You must run this manually before running MetroJs server
+# Otherwise you'll get: "Cannot read properties of undefined (reading 'seed')"
 cd ./android
 ./gradlew build
+cd .. && npm start
+# metro will not automatically apply native changes so press A to deploy
 ```
 Open your `yarn.lock` file and make sure that dependencies are resolved according to [package.json](https://www.npmjs.com/package/@kitzen/react-native-bip39?activeTab=code) resolutions section.
 
