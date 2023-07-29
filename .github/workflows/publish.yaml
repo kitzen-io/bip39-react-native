@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: EndBug/version-check@v2
       with:
-        file-url: https://unpkg.com/@kitzen/react-native-bip39@0.0.3/package.json
+        file-url: https://unpkg.com/@kitzen/react-native-bip39@latest/package.json
         static-checking: localIsNew
   publish:
     needs: check-version
