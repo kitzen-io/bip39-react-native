@@ -1,6 +1,6 @@
 {
   "name": "@kitzen/react-native-bip39",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,10 @@
   "typings": "./lib/index.d.ts",
   "engines": {
     "node": ">=18 < 19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitzen-io/bip39-react-native"
   },
   "peerDependencies": {
     "buffer": "^6.0.3"
