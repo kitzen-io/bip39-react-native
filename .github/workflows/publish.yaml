@@ -3,14 +3,19 @@ on:
   push:
     branches: [ main ]
 jobs:
-  build:
+  check-version:
+   runs-on: ubuntu-latest
+   steps:
+    - uses: EndBug/version-check@v2
+      with:
+        file-url: https://unpkg.com/@kitzen/react-native-bip39@0.0.3/package.json
+        static-checking: localIsNew
+  publish:
+    needs: check-version
+    if: ${{ needs.check-version.outputs.changed == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: EndBug/version-check@v2
-        with:
-          file-url: https://unpkg.com/@kitzen/react-native-bip39@0.0.3/package.json
-          static-checking: localIsNew
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
