@@ -3,15 +3,7 @@ on:
   push:
     branches: [ main ]
 jobs:
-  check-version:
-   runs-on: ubuntu-latest
-   steps:
-    - uses: actions/checkout@v3
-    - uses: EndBug/version-check@v2
-      with:
-        file-url: https://unpkg.com/@kitzen/react-native-bip39@latest/package.json
-        static-checking: localIsNew
-  publish:
+  build-publish:
     needs: check-version
     if: ${{ needs.check-version.outputs.changed == 'true' }}
     runs-on: ubuntu-latest
@@ -23,6 +15,12 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - uses: EndBug/version-check@v2
+        id: version-check
+        with:
+          file-url: https://unpkg.com/@kitzen/react-native-bip39@latest/package.json
+          static-checking: localIsNew
       - run: npm publish
+        if: steps.version-check.outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
