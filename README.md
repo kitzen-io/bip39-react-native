@@ -12,6 +12,7 @@ As native implementation for both from Android and IOS.
 It was forked from [react-native-bip39](https://github.com/valora-inc/react-native-bip39), but original version have issues with
  - Dependencies, which are resolved here. E.g. require changed from original code.
  - Installation tips
+ - Typescript support
 
 ## Installation
 1. Copy paste this block to your package.json:
@@ -29,7 +30,7 @@ It was forked from [react-native-bip39](https://github.com/valora-inc/react-nati
 }
 ```
 This is required! 
- - Resolutions are not applied from nested modules. So manuall setup is required
+ - Resolutions are not applied from nested modules. So manual setup is required
  - Duplicating dependencies is required so react could pull up list of packages it needs to check as native modules, otherwise you'll get [undefined RNRandomBytes.seed](https://stackoverflow.com/questions/67019573/typeerror-null-is-not-an-object-evaluating-rnrandombytes-seed-react-native/76767229#76767229)
 
 2. Install the library
@@ -41,7 +42,7 @@ yarn add buffer ^6.0.3
 cd ./android
 ./gradlew build
 cd .. && npm start
-# metro will not automatically apply native changes so press A to deploy
+# metro will not automatically apply native changes. Thus please press 'A' to deploy android
 ```
-Open your `yarn.lock` file and make sure that dependencies are resolved according to [package.json](https://www.npmjs.com/package/@kitzen/react-native-bip39?activeTab=code) resolutions section.
+3. Open your `yarn.lock` file and make sure that dependencies are resolved according to [package.json](https://www.npmjs.com/package/@kitzen/react-native-bip39?activeTab=code) resolutions section.
 

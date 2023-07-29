@@ -22,11 +22,11 @@ export function mnemonicToSeed(mnemonic: string, password: string = '') {
   return pbkdf2(mnemonicBuffer, saltBuffer, 2048, 64, 'sha512')
 }
 
-function mnemonicToSeedHex(mnemonic: string, password: string) {
+export function mnemonicToSeedHex(mnemonic: string, password: string) {
   return mnemonicToSeed(mnemonic, password).toString('hex')
 }
 
-function mnemonicToEntropy(mnemonic: string, wordlist: string[]) {
+export function mnemonicToEntropy(mnemonic: string, wordlist: string[]) {
   wordlist = wordlist || DEFAULT_WORDLIST
 
   let words = mnemonic.split(' ')
@@ -61,7 +61,7 @@ function mnemonicToEntropy(mnemonic: string, wordlist: string[]) {
   return entropyBuffer.toString('hex')
 }
 
-function entropyToMnemonic(entropy: string, wordlist: string[] = DEFAULT_WORDLIST) {
+export function entropyToMnemonic(entropy: string, wordlist: string[] = DEFAULT_WORDLIST) {
   let entropyBuffer = new Buffer(entropy, 'hex')
   let entropyBits = bytesToBinary([].slice.call(entropyBuffer))
   let checksum = checksumBits(entropyBuffer)
@@ -94,7 +94,7 @@ export function generateMnemonic(
   })
 }
 
-function validateMnemonic(mnemonic: string, wordlist: string[]) {
+export function validateMnemonic(mnemonic: string, wordlist: string[]) {
   try {
     mnemonicToEntropy(mnemonic, wordlist)
   } catch (e) {
