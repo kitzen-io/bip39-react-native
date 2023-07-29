@@ -10,7 +10,7 @@
     "lib"
   ],
   "typings": "./lib/index.d.ts",
-  "engines": {
+  "engines": 
     "node": ">=18 < 19"
   },
   "peerDependencies": {
