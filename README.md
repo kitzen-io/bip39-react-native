@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/kitzen-io/bip39-react-native/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/@kitzen/react-native-bip39.svg)](https://www.npmjs.com/package/@kitzen/react-native-bip39) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/akoidan/spainter/issues/new)  ![test](https://github.com/kitzen-io/bip39-react-native/workflows/build-publish/badge.svg)
+
 ## bip39 with android support
 [Bip39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) is a BTC proposal for improval on BTC network that allows to generate a private key using 12-24 mneumonic words.
 
