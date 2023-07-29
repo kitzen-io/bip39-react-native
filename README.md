@@ -25,9 +25,9 @@ It was forked from [react-native-bip39](https://github.com/valora-inc/react-nati
     "react-native-randombytes": "*"
   },
   "resolutions": {
-    "react-native-crypto/pbkdf2": "3.1.2",
-    "react-native-crypto/public-encrypt/parse-asn1/pbkdf2": "3.1.2",
-    "react-native-random-bytes/buffer": "^6.0.3"
+    "@kitzen/react-native-bip39/react-native-crypto/pbkdf2": "3.1.2",
+    "@kitzen/react-native-bip39/react-native-crypto/public-encrypt/parse-asn1/pbkdf2": "3.1.2",
+    "@kitzen/react-native-bip39/react-native-random-bytes/buffer": "^6.0.3"
   }
 }
 ```
