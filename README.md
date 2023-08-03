@@ -6,7 +6,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/kitzen-io/react-native-bip39/badge.svg)](https://snyk.io/test/github/kitzen-io/react-native-bip39)
 
 # Bip39 with android support
-[Bip39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) is a BTC proposal for improval on BTC network that allows to generate a private key using 12-24 mneumonic words.
+[Bip39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) is an enhancement proposal for the Bitcoin network, enabling the generation of a private key through a set of 12-24 mnemonic words
 
 ### Why we need this instead of npm's bip39?
 Original [bip39](https://github.com/bitcoinjs/bip39) js library requires runtime implementation of crypto, e.g. [v8](https://v8.dev/) provides [globalThis.crypto](https://developer.mozilla.org/en-US/docs/Web/API/crypto_property), but [Hermes](https://reactnative.dev/docs/hermes) doesn't.
